@@ -1,13 +1,180 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  font-family: sans-serif;
+  min-height: 100vh;
+  background-color: #000;
+  color: #fff;
+}
+h1 {
+  align-self: center;
+  animation-name: headingAnime;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  height: 40px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@keyframes headingAnime {
+  from {
+    box-shadow: 0 0 10px #fff;
+  }
+  to {
+    box-shadow: 0 0 15px #f3c4c4;
+  }
+}
+.summary {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 10px;
+  align-self: center;
+}
+.total-balance-container,
+.total-income-container,
+.total-expense-container {
+  display: flex;
+  width: 150px;
+  height: 100px;
+  background-color: rgba(208, 200, 200, 0.345);
+}
+.total-balance,
+.total-income,
+.total-expense {
+  align-self: center;
+}
+
+.add-expense-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  border: none;
+  outline: none;
+  width: 470px;
+  height: 30px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: all 0.3s;
+}
+.add-expense-button:hover {
+  transform: scale(1.1);
+}
+.add-expense-button:active,
+.form-add-expense button:active {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.form-add-expense {
+  display: grid;
+  grid-template-rows: 0.5fr;
+  row-gap: 5px;
+  width: 500px;
+  margin: 0 auto;
+}
+.form-add-expense button {
+  justify-self: end;
+  width: 100px;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  padding: 5px 0;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.form-add-expense button:hover {
+  transform: scale(1.2);
+}
+.form-add-expense h2 {
+  justify-self: center;
+}
+.desc-container,
+.amount-container,
+.type-container,
+.category-container,
+.date-container {
+  display: grid;
+  grid-template-columns: 0.2fr 1fr;
+}
+.desc-container input,
+.type-container select,
+.amount-container input,
+.category-container select,
+.date-container input {
+  outline: none;
+  border: none;
+  border-radius: 25px;
+  padding-left: 5px;
+}
+
+.transaction-container {
+  /* display: grid;
+  grid-template-rows: 1fr 1fr 1fr; */
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.transaction-item {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  column-gap: 7px;
+  margin-top: 10px;
+  text-align: center;
+  background-color: rgb(43, 42, 42);
+  transition: all 0.3s;
+  /* border: 2px solid red; */
+}
+.transaction-item:hover {
+  background-color: rgb(55, 53, 53);
+}
+.transaction-item button {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.transaction-list {
+  /* border: 2px solid green; */
+}
+.transaction-container h2 {
+  align-self: center;
+  height: 30px;
+}
+.transaction-container h2,
+.transaction-container .filter-container {
+  justify-self: center;
+}
+.filter-container {
+  /* border: 2px solid red; */
+  align-self: center;
+  margin-bottom: 15px;
+  width: 250px;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+}
+.filter-container .select-filter {
+  outline: none;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.title-container {
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-align: center;
+  /* display: grid;
+  grid-template-columns: repeat(7, 1fr); */
+}
+.title {
+  font-weight: bold;
+  align-self: start;
 }
